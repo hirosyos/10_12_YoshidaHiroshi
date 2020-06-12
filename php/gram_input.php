@@ -11,8 +11,13 @@ check_session_id();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
   <title>GRAMリスト（入力画面）</title>
 </head>
+
+<header>
+  <h1>GRAM</h1>
+</header>
 
 <body>
   <form action="gram_create.php" method="POST">
@@ -79,5 +84,9 @@ check_session_id();
   </form>
 
 </body>
+
+<footer>
+  <p>.</p>
+</footer>
 
 </html>

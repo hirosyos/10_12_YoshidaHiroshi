@@ -41,8 +41,13 @@ if ($status == false) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
   <title>GRAM（編集画面）</title>
 </head>
+
+<header>
+  <h1>GRAM</h1>
+</header>
 
 <body>
   <form action="gram_update.php" method="POST">
@@ -108,5 +113,9 @@ if ($status == false) {
   </form>
 
 </body>
+
+<footer>
+  <p>.</p>
+</footer>
 
 </html>
