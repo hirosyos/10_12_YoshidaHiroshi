@@ -15,6 +15,14 @@ $sql = 'SELECT * FROM gram_table';
 $stmt = $pdo->prepare($sql);
 $status = $stmt->execute();
 
+//タイトル作成
+$title = "";
+if ($_SESSION["is_admin"] == 1) {
+  $title = "GRAMリスト（一覧画面）[users_id:{$_SESSION["users_id"]}][管理者]";
+} else {
+  $title = "GRAMリスト（一覧画面）[users_id:{$_SESSION["users_id"]}][一般]";
+}
+
 // データ登録処理後
 if ($status == false) {
   // SQL実行に失敗した場合はここでエラーを出力し，以降の処理を中止する
@@ -73,12 +81,14 @@ if ($status == false) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DB連携型todoリスト（一覧画面）</title>
+  <!-- <title>GRAMリスト（一覧画面</title> -->
+  <title><?= $title ?></title>
 </head>
 
 <body>
   <fieldset>
-    <legend>GRAMリスト（一覧画面）</legend>
+    <!-- <legend>GRAMリスト（一覧画面）</legend> -->
+    <legend><?= $title ?></legend>
     <a href="gram_input.php">入力画面</a>
     <a href="gram_logout.php">logout</a>
     <table>
