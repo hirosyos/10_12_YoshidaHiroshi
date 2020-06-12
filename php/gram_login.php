@@ -17,10 +17,10 @@
     <fieldset>
       <legend>GRAMログイン画面</legend>
       <div>
-        users_id: <input type="text" name="users_id">
+        ユーザID: <input type="text" name="users_id">
       </div>
       <div>
-        users_password: <input type="text" name="users_password">
+        パスワード: <input type="text" name="users_password">
       </div>
       <div>
         <button>Login</button>

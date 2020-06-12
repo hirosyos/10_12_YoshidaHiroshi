@@ -30,49 +30,49 @@ check_session_id();
         id: 自動生成
       </div>
       <div>
-        users_id: <input type="text" name="users_id">
+        ユーザID: <input type="text" name="users_id">
       </div>
       <div>
-        users_password: <input type="text" name="users_password">
+        パスワード: <input type="text" name="users_password">
       </div>
       <div>
-        is_admin: <input type="text" name="is_admin">
+        管理者権限: <input type="text" name="is_admin">
       </div>
       <div>
-        is_deleted: <input type="text" name="is_deleted">
+        削除: <input type="text" name="is_deleted">
       </div>
       <div>
-        created_at: 自動生成
+        作成日時: 自動生成
       </div>
       <div>
-        updated_at: 自動生成
+        更新日時: 自動生成
       </div>
       <div>
-        last_name: <input type="text" name="last_name">
+        名字: <input type="text" name="last_name">
       </div>
       <div>
-        first_name: <input type="text" name="first_name">
+        名前: <input type="text" name="first_name">
       </div>
       <div>
-        last_name_kana: <input type="text" name="last_name_kana">
+        ミョウジ: <input type="text" name="last_name_kana">
       </div>
       <div>
-        first_name_kana: <input type="text" name="first_name_kana">
+        ナマエ: <input type="text" name="first_name_kana">
       </div>
       <div>
-        nick_name: <input type="text" name="nick_name">
+        ニックネーム: <input type="text" name="nick_name">
       </div>
       <div>
-        users_location: <input type="text" name="users_location">
+        場所: <input type="text" name="users_location">
       </div>
       <div>
-        cource: <input type="text" name="cource">
+        コース: <input type="text" name="cource">
       </div>
       <div>
-        ki: <input type="text" name="ki">
+        期: <input type="text" name="ki">
       </div>
       <div>
-        touitsu_ki: <input type="text" name="touitsu_ki">
+        統一期: <input type="text" name="touitsu_ki">
       </div>
 
 
