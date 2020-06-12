@@ -41,7 +41,7 @@ if (!$val) {
   $_SESSION = array(); // セッション変数を空にする 
   $_SESSION["session_id"] = session_id();
   $_SESSION["is_admin"] = $val["is_admin"];
-  $_SESSION["user_id"] = $val["user_id"];
+  $_SESSION["users_id"] = $val["users_id"];
   header("Location:gram_read.php");
   exit();
 }

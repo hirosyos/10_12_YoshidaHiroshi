@@ -46,9 +46,19 @@ if ($status == false) {
     $output .= "<td>{$record["cource"]}</td>";
     $output .= "<td>{$record["ki"]}</td>";
     $output .= "<td>{$record["touitsu_ki"]}</td>";
+
     // edit deleteリンクを追加
-    $output .= "<td><a href='gram_edit.php?id={$record["id"]}'>edit</a></td>";
-    $output .= "<td><a href='gram_delete.php?id={$record["id"]}'>delete</a></td>";
+    // 編集は管理者または本人しかできない
+    if ($_SESSION["is_admin"] == 1) {
+      $output .= "<td><a href='gram_edit.php?id={$record["id"]}'>編集</a></td>";
+      $output .= "<td><a href='gram_delete.php?id={$record["id"]}'>削除</a></td>";
+    } else if ($_SESSION["is_admin"] != 1 && $_SESSION["users_id"] == $record["users_id"]) {
+      $output .= "<td><a href='gram_edit.php?id={$record["id"]}'>編集</a></td>";
+      $output .= "<td>削除(管理者)</td>";
+    } else {
+      $output .= "<td>編集(管理者か本人)</td>";
+      $output .= "<td>削除(管理者)</td>";
+    }
     $output .= "</tr>";
   }
   // $valueの参照を解除する．解除しないと，再度foreachした場合に最初からループしない
