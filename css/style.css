@@ -1,80 +1,30 @@
-
-header{
-    /* padding:0;
-    text-align:center; */
-    display:flex;
-	/* justify-content:center; */
-    align-items:center;
-    margin:0px 0px 20px 0px; /*上右下左*/
+.header,.footer {
+    width: 100%;
+    background: #1395E4;
+    color: whitesmoke;
+    border: 1px solod #000;
+    box-sizing: border-box;
+    text-align: center;
 }
-header h1{
-    margin:0px 20px 0px 0px; /*上右下左*/
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    text-align: center;
+    flex-direction: column;
 }
-header p{
-    margin:0px 20px 0px 0px; /*上右下左*/
+table,
+tr,
+td,
+th {
+    text-align: center;
+    border: 2px #1395E4 solid;
 }
-header button{
-    width:100px;
-    margin:0px 20px 0px 0px; /*上右下左*/
+form {
+    display: flex;
+    flex-direction: column;
 }
-
-body{
-    background-color:rgb(210, 239, 250);
-    /* width: 960px; */
-	/* margin-left:auto;
-    margin-right:auto; */
-    /* text-align:center; */
-    
-}
-.tableArea{
-    margin:0px 0px 0px 0px; /*上右下左*/
-}
-.tableArea table{
-    border-collapse: collapse;
-    border-spacing: 0;
-    display:block;
-    /* margin:0px 0px 0px 0px; 上右下左 */
-}
-.tableArea tr {
-    border:0px;
-    /* display:block; */
-    padding:0px;
-    margin:0px 0px 0px 0px; 
-}
-/* .tableArea th{
-    border:0px;
-    display:block;
-    padding:0px;
-    margin:0px 0px 0px 0px; 
-} */
-/* .tableArea td{
-    border:0px;
-    display:block;
-    padding:0px;
-    margin:0px 0px 0px 0px;
-} */
-
-.tableArea form{
-    border:0px;
-    display:block;
-    padding:0px;
-    margin:0px 0px 0px 0px; /*上右下左*/
-}
-.tableArea input{
-    /* border:0px; */
-    /* display:block; */
-    /* padding:0px; */
-    margin:0px 0px 0px 0px; /*上右下左*/
-}
-.tableArea button{
-    width:60px;
-}
-/* .tableArea form{
-    width:60px;
-} */
-
-
-footer{
-    text-align:center;
-    margin:80px 0px 0px 0px; /*上右下左*/
+form ul {
+    list-style: none;
 }

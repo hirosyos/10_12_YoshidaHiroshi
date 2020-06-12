@@ -40,11 +40,6 @@ if ($status == false) {
     $output .= "<tr>";
     $output .= "<td>{$record["id"]}</td>";
     $output .= "<td>{$record["users_id"]}</td>";
-    $output .= "<td>{$record["users_password"]}</td>";
-    $output .= "<td>{$record["is_admin"]}</td>";
-    $output .= "<td>{$record["is_deleted"]}</td>";
-    $output .= "<td>{$record["created_at"]}</td>";
-    $output .= "<td>{$record["updated_at"]}</td>";
     $output .= "<td>{$record["last_name"]}</td>";
     $output .= "<td>{$record["first_name"]}</td>";
     $output .= "<td>{$record["last_name_kana"]}</td>";
@@ -54,18 +49,25 @@ if ($status == false) {
     $output .= "<td>{$record["cource"]}</td>";
     $output .= "<td>{$record["ki"]}</td>";
     $output .= "<td>{$record["touitsu_ki"]}</td>";
+    if ($_SESSION["is_admin"] == 1) {
+      $output .= "<td>{$record["users_password"]}</td>";
+      $output .= "<td>{$record["is_admin"]}</td>";
+      $output .= "<td>{$record["is_deleted"]}</td>";
+      $output .= "<td>{$record["created_at"]}</td>";
+      $output .= "<td>{$record["updated_at"]}</td>";
+    }
 
     // edit deleteリンクを追加
-    // 編集は管理者または本人しかできない
+    // 編集/削除は管理者または本人しかできない
     if ($_SESSION["is_admin"] == 1) {
       $output .= "<td><a href='gram_edit.php?id={$record["id"]}'>編集</a></td>";
       $output .= "<td><a href='gram_delete.php?id={$record["id"]}'>削除</a></td>";
     } else if ($_SESSION["is_admin"] != 1 && $_SESSION["users_id"] == $record["users_id"]) {
       $output .= "<td><a href='gram_edit.php?id={$record["id"]}'>編集</a></td>";
-      $output .= "<td>削除(管理者)</td>";
+      $output .= "<td><a href='gram_delete.php?id={$record["id"]}'>削除</a></td>";
     } else {
-      $output .= "<td>編集(管理者か本人)</td>";
-      $output .= "<td>削除(管理者)</td>";
+      $output .= "<td>-</td>";
+      $output .= "<td>-</td>";
     }
     $output .= "</tr>";
   }
@@ -81,9 +83,15 @@ if ($status == false) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+
   <!-- <title>GRAMリスト（一覧画面</title> -->
   <title><?= $title ?></title>
 </head>
+
+<header>
+  <h1>GRAM</h1>
+</header>
 
 <body>
   <fieldset>
@@ -94,22 +102,26 @@ if ($status == false) {
     <table>
       <thead>
         <tr>
-          <th>id</th>
-          <th>users_id</th>
-          <th>users_password</th>
-          <th>is_admin</th>
-          <th>is_deleted</th>
-          <th>created_at</th>
-          <th>updated_at</th>
-          <th>last_name</th>
-          <th>first_name</th>
-          <th>last_name_kana</th>
-          <th>first_name_kana</th>
-          <th>nick_name</th>
-          <th>users_location</th>
-          <th>cource</th>
-          <th>ki</th>
-          <th>touitsu_ki</th>
+          <th>ID</th>
+          <th>ユーザID</th>
+          <th>名字</th>
+          <th>名前</th>
+          <th>ミョウジ</th>
+          <th>ナマエ</th>
+          <th>ニックネーム</th>
+          <th>場所</th>
+          <th>コース</th>
+          <th>期</th>
+          <th>統一期</th>
+          <?php if ($_SESSION["is_admin"] == 1) {
+            echo ("<th>パスワード</th>");
+            echo ("<th>管理者権限</th>");
+            echo ("<th>削除</th>");
+            echo ("<th>作成日時</th>");
+            echo ("<th>更新日時</th>");
+          } ?>
+          <th>編集</th>
+          <th>削除</th>
         </tr>
       </thead>
       <tbody>
@@ -119,5 +131,9 @@ if ($status == false) {
     </table>
   </fieldset>
 </body>
+
+<footer>
+  <p>統一期とは東京DEVの期を基準とし、東京LABは7期、福岡DEVは10期、福岡LABは13期足し合わせたものである</p>
+</footer>
 
 </html>
