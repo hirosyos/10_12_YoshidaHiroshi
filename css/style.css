@@ -1,0 +1,80 @@
+
+header{
+    /* padding:0;
+    text-align:center; */
+    display:flex;
+	/* justify-content:center; */
+    align-items:center;
+    margin:0px 0px 20px 0px; /*上右下左*/
+}
+header h1{
+    margin:0px 20px 0px 0px; /*上右下左*/
+}
+header p{
+    margin:0px 20px 0px 0px; /*上右下左*/
+}
+header button{
+    width:100px;
+    margin:0px 20px 0px 0px; /*上右下左*/
+}
+
+body{
+    background-color:rgb(210, 239, 250);
+    /* width: 960px; */
+	/* margin-left:auto;
+    margin-right:auto; */
+    /* text-align:center; */
+    
+}
+.tableArea{
+    margin:0px 0px 0px 0px; /*上右下左*/
+}
+.tableArea table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    display:block;
+    /* margin:0px 0px 0px 0px; 上右下左 */
+}
+.tableArea tr {
+    border:0px;
+    /* display:block; */
+    padding:0px;
+    margin:0px 0px 0px 0px; 
+}
+/* .tableArea th{
+    border:0px;
+    display:block;
+    padding:0px;
+    margin:0px 0px 0px 0px; 
+} */
+/* .tableArea td{
+    border:0px;
+    display:block;
+    padding:0px;
+    margin:0px 0px 0px 0px;
+} */
+
+.tableArea form{
+    border:0px;
+    display:block;
+    padding:0px;
+    margin:0px 0px 0px 0px; /*上右下左*/
+}
+.tableArea input{
+    /* border:0px; */
+    /* display:block; */
+    /* padding:0px; */
+    margin:0px 0px 0px 0px; /*上右下左*/
+}
+.tableArea button{
+    width:60px;
+}
+/* .tableArea form{
+    width:60px;
+} */
+
+
+footer{
+    text-align:center;
+    margin:80px 0px 0px 0px; /*上右下左*/
+}
