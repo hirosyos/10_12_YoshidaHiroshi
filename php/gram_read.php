@@ -9,7 +9,11 @@ check_session_id();
 $pdo = connect_to_db();
 
 // データ取得SQL作成
-$sql = 'SELECT * FROM gram_table';
+// $sql = 'SELECT * FROM gram_table';
+$sql = 'SELECT * FROM gram_table 
+        LEFT OUTER JOIN cource_table
+        ON gram_table.cource_id = cource_table.cource_id';
+// $sql = 'SELECT * FROM cource_table';
 
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
@@ -33,6 +37,11 @@ if ($status == false) {
   // 正常にSQLが実行された場合は入力ページファイルに移動し，入力ページの処理を実行する
   // fetchAll()関数でSQLで取得したレコードを配列で取得できる
   $result = $stmt->fetchAll(PDO::FETCH_ASSOC);  // データの出力用変数（初期値は空文字）を設定
+
+  // echo ('<pre>');
+  // var_dump($result);
+  // echo ('<pre>');
+
   $output = "";
   // <tr><td>deadline</td><td>todo</td><tr>の形になるようにforeachで順番に$outputへデータを追加
   // `.=`は後ろに文字列を追加する，の意味
@@ -49,6 +58,8 @@ if ($status == false) {
     $output .= "<td>{$record["nick_name"]}</td>";
     $output .= "<td>{$record["users_location"]}</td>";
     $output .= "<td>{$record["cource"]}</td>";
+    $output .= "<td>{$record["cource_id"]}</td>";
+    $output .= "<td>{$record["cource_txt"]}</td>";
     $output .= "<td>{$record["ki"]}</td>";
     $output .= "<td>{$record["touitsu_ki"]}</td>";
     if ($_SESSION["is_admin"] == 1) {
@@ -116,6 +127,8 @@ if ($status == false) {
           <th>ニックネーム</th>
           <th>場所</th>
           <th>コース</th>
+          <th>コースID</th>
+          <th>コース(from cource_table)</th>
           <th>期</th>
           <th>統一期</th>
           <?php if ($_SESSION["is_admin"] == 1) {
